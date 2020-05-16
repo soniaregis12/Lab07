@@ -31,7 +31,7 @@
                <children>
                   <ImageView fx:id="image" fitHeight="200.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../NERC-map.png" />
+                        <Image url="@../images/NERC-map.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="15.0" right="10.0" top="10.0" />

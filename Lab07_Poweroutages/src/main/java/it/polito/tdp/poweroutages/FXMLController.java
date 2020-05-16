@@ -17,7 +17,7 @@ import javafx.scene.image.ImageView;
 
 public class FXMLController {
 	
-	private Model model;
+	Model model;
 
     @FXML
     private ResourceBundle resources;
@@ -45,23 +45,22 @@ public class FXMLController {
 
     @FXML
     void doWorstCase(ActionEvent event) {
-    	   	
     	txtResult.clear();
-    	txtResult.appendText("TOT people affected: " + model.getCustomersAffectedHigher() + "\n");
-    	txtResult.appendText("TOT hours of outage: " + model.getOreTotali() + "\n");
     	
     	model.setMAX_HOURS(Long.parseLong(txtHours.getText()));
     	model.setMAX_YEARS(Integer.parseInt(txtHours.getText()));
     	
     	List<Poweroutage> lista = model.trovaSequenza(comboBoxNERC.getValue());
+    	
+    	txtResult.appendText("TOT people affected: " + model.getCustomersAffectedHigher() + "\n");
+    	txtResult.appendText("TOT hours of outage: " + model.getOreTotali() + "\n");
+    	
     	for(Poweroutage p : lista) {
     		txtResult.appendText(p.toString());
     	}
-    	
-
     }
-    
-	@FXML
+
+    @FXML
     void initialize() {
         assert image != null : "fx:id=\"image\" was not injected: check your FXML file 'Scene.fxml'.";
         assert comboBoxNERC != null : "fx:id=\"comboBoxNERC\" was not injected: check your FXML file 'Scene.fxml'.";
@@ -77,3 +76,9 @@ public class FXMLController {
     	comboBoxNERC.getItems().addAll(this.model.getNercList());
     }
 }
+
+  
+    
+
+    
+    

@@ -72,7 +72,7 @@ public class Model {
 		float persone = calcolaPersone(parziale);
 		// Se arrivo qui vuol dire che non ho ancora sforato le due condizioni importanti, e posso vedere se è effettivamente la soluzione migliore che ha più persone 
 		// che sono state coinvolte (oppure se ci troviamo al primo caso e devo salvarmi i dati, che sicuramente sono i migliori finora)
-		if(this.customersAffectedHigher == 0 || persone > this.customersAffectedHigher) {
+		if(persone > this.customersAffectedHigher) {
 			this.customersAffectedHigher = persone;
 			this.oreTotali = ore;
 			this.best = new ArrayList<Poweroutage>(parziale);		
@@ -85,7 +85,7 @@ public class Model {
 		ricorsiva(parziale, livello+1);
 		parziale.remove(parziale.size()-1);
 		
-		ricorsiva(parziale,livello);
+		ricorsiva(parziale,livello+1);
 	}
 	
 	private float calcolaPersone(List<Poweroutage> parziale) {

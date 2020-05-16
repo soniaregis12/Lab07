@@ -157,7 +157,7 @@ public class Poweroutage {
 	@Override
 	public String toString() {
 		return dateEventBegan + " " + timeEventBegan
-				+ ", " + dateEventFinished + " " + timeEventFinished + ", " + customersAffected;
+				+ ", " + dateEventFinished + " " + timeEventFinished + ", " + customersAffected + "\n";
 	}
 
 }
